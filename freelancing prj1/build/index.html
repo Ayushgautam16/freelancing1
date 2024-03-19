@@ -22,7 +22,7 @@
   <div class="bb ze ki xn 2xl:ud-px-0 oo wf yf i">
     <div class="vd to/4 tc wf yf">
       <a href="index.html">
-        <h1>Astute Lex Servicado</h1>
+        <h1 style="">Astute Lex Servicado </h1>
       </a>
 
       <!-- Hamburger Toggle BTN -->
@@ -48,9 +48,37 @@
     >
       <nav>
         <ul class="tc _o sf yo cg ep">
-          <li><a href="index.html" class="xl" :class="{ 'mk': page === 'home' }">Product</a></li>
+          
+          <li class="c i" x-data="{ dropdown: false }">
+            <a
+              href="#"
+              class="xl tc wf yf bg"
+              @click.prevent="dropdown = !dropdown"
+              :class="{ 'mk': page === 'blog-grid' || page === 'blog-single' || page === 'signin' || page === 'signup' || page === '404' }"
+            >
+              Product
+              <svg
+              :class="{ 'wh': dropdown }"
+              class="th mm we fd pf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+              </svg>
+            </a>
 
-          <li><a href="index.html#features" class="xl">Why we</a></li>
+            <!-- Dropdown Start  link vala-->
+            <ul class="a" :class="{ 'tc': dropdown }">
+              
+              <li><a href="blog-single.html" class="xl" :class="{ 'mk': page === 'blog-single' }">LeXi Ai
+              </a></li>
+              <li><a href="blog-single.html" class="xl" :class="{ 'mk': page === 'blog-single' }">Clause Ai
+              </a></li>
+              <li><a href="blog-single.html" class="xl" :class="{ 'mk': page === 'blog-single' }">LeXi Draft</a></li>
+             
+              <!-- <li><a href="signup.html" class="xl" :class="{ 'mk': page === 'signup' }">CONTACT US</a></li> -->
+            </ul>
+            <!-- Dropdown End -->
+          </li>
+
+          <!-- second dummy -->
           <li class="c i" x-data="{ dropdown: false }">
             <a
               href="#"
@@ -59,7 +87,6 @@
               :class="{ 'mk': page === 'blog-grid' || page === 'blog-single' || page === 'signin' || page === 'signup' || page === '404' }"
             >
               Solution
-
               <svg
               :class="{ 'wh': dropdown }"
               class="th mm we fd pf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -70,22 +97,24 @@
             <!-- Dropdown Start -->
             <ul class="a" :class="{ 'tc': dropdown }">
               
-              <li><a href="blog-single.html" class="xl" :class="{ 'mk': page === 'blog-single' }">Startups
+              <li><a class="xl" :class="{ 'mk': page === 'blog-single' }">Startups
               </a></li>
-              <li><a href="blog-single.html" class="xl" :class="{ 'mk': page === 'blog-single' }">MSMEs
+              <li><a  class="xl" :class="{ 'mk': page === 'blog-single' }">MSMEs
               </a></li>
-              <li><a href="blog-single.html" class="xl" :class="{ 'mk': page === 'blog-single' }">Enterprise</a></li>
+              <li><a  class="xl" :class="{ 'mk': page === 'blog-single' }">Enterprise</a></li>
              
               <li><a href="signup.html" class="xl" :class="{ 'mk': page === 'signup' }">CONTACT US</a></li>
             </ul>
             <!-- Dropdown End -->
           </li>
+
+          <li><a href="index.html#features" class="xl">Why we</a></li>
           
           
           <li><a href="index.html#support" class="xl">Discover</a></li>
         </ul>
       </nav>
-
+  
       <div class="tc wf ig pb no">
         <div class="pc h io pa ra" :class="navigationOpen ? '!-ud-visible' : 'd'">
           <label class="rc ab i">
@@ -121,23 +150,15 @@
 
           
         </div>
-
+  
         <!-- Hero Content -->
         <div class="bb ze ki xn 2xl:ud-px-0">
           <div class="tc _o">
             <div class="animate_left jn/2">
-              <h1 class="fk vj zp or kk wm wb">Astute Lex Servicado</h1>
+              <styles class="fk vj zp or kk wm wb">Astute Lex Servicado</h1>
               <p class="fq">
                 Simplifying Complexity, Amplifying Efficiency
-                <h2>Take your contract 
-                  analysis to the next level 
-                  with Clause AI</h2>
-                  <h2>Effortless Analysis
-                    Risk Identification
-                    : Quickly analyze contract clauses 
-                    with just a few clicks¢
-                    : Identify potential risks in your 
-                    clauses and receive recommendations for improvement.</h2>
+                </h2>
               </p>
 
               <div class="tc tf yo zf mb">
@@ -155,7 +176,7 @@
         </div>
       </section>
       <!-- ===== Hero End ===== -->
-
+  
       <!-- ===== Small Features Start ===== -->
       <section id="features">
         <div class="bb ze ki yn 2xl:ud-px-12.5">
@@ -195,11 +216,22 @@
 
             <!-- About Content -->
             <div class="animate_right jn/2">
-              <h4 class="ek yj mk gb">What sets us apart
-                from the rest</h4>
+              
               <h2 class="fk vj zp pr kk wm qb">We help you to transform.</h2>
-              <p class="uo">Save 80% of your time | Automate 60% manual task | Improve 90% of Accuracy.</p>
-
+              <ul >
+                <div style=" padding: 5px;
+                margin-top: 10px;" >
+               <li>Save 80% of your time</li>
+              </div>
+                <div style="margin-top: 10px; padding: 5px;" >
+               <li>Automate 60% manual task</li>
+              </div>
+                <div style=" margin-top: 10px; padding: 5px;" >
+               <li>Improve 90% of Accuracy.</li>
+              </div>
+               <!-- <li> Automate 60% manual task </li> -->
+               <!-- <li> Improve 90% of Accuracy.</li> -->
+              </ul>
               <a href="https://www.youtube.com/watch?v=xcJtL7QggTI" data-fslightbox class="vc wf hg mb">
                 <span class="tc wf xf be dd rg i gh ua">
                   <span class="nf h vc yc vd rg gh qk -ud-z-1"></span>
@@ -221,7 +253,7 @@
       <section class="lj tp kr">
         <!-- Section Title Start -->
         <div
-          x-data="{ sectionTitle: `Have a look at our Product's`, sectionTitleText: `Lexi AI is a comprehensive Contract Lifecycle Management (CLM) solutionClause AI analyzes contracts to pinpoint potential risks and provides intelligent suggestions to strengthen these clauses LeXi Draft help in contract drafting with advanced AI, saving you time and ensuring accuracy.`}"
+          x-data="{ sectionTitle: `Have a look at our Innovation`, sectionTitleText: ``}"
         >
           <div class="animate_top bb ze rj ki xn vq">
     <h2
@@ -286,10 +318,7 @@
           <div class="tc uf sn tn xf un gg">
             <div class="animate_top me/5 ln rj">
               <h2 class="gk vj zp or kk wm hc">Get Started Today</h2>
-              <p class="ek bk aq">Take your contract clause analysis to the next level with Clause AI. 
-                Enhance the quality of your contracts, reduce risks, and improve 
-                compliance with our AI-powered tool. Get started today and experience the 
-                future of contract management!</p>
+              <p class="ek bk aq"> LeXi AI's intelligent features will guide you through the process, helping you create comprehensive contracts efficiently. You can also use our platform for risk analysis, e-signing, and multilanguage support, ensuring that your contracts are accurate and legally sound. With LeXi AI, contract management has never been easier.</p>
             
           </div>
         </div>
@@ -528,7 +557,7 @@
                       type="email"
                       name="email"
                       id="email"
-                      placeholder="example@gmail.com"
+                      placeholder="astutelexservicado@gmail.com"
                       class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 xi mi"
                     />
                   </div>
@@ -541,7 +570,7 @@
                       type="text"
                       name="phone"
                       id="phone"
-                      placeholder="+009 3342 3432"
+                      placeholder="83605 51795"
                       class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 xi mi"
                     />
                   </div>
@@ -711,15 +740,13 @@
     <div class="bh ch pm tc uf sf yo wf xf ap cg fp bj">
       <div class="animate_top">
         <ul class="tc wf gg">
-          <li><a href="#" class="xl">English</a></li>
+         <br>
           <li><a href="#" class="xl">Privacy Policy</a></li>
           <li><a href="#" class="xl">Support</a></li>
         </ul>
       </div>
 
-      <div class="animate_top">
-        <p>&copy; 2025 Base. All rights reserved</p>
-      </div>
+     
     </div>
     <!-- Footer Bottom -->
   </div>
